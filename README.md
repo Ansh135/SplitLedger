@@ -36,5 +36,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 =======
-# Expensify
+# SplitLedger
 >>>>>>> 565eead3ac04e83bf8820a8a04c53511de6078fc
