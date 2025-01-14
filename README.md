@@ -42,42 +42,54 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/Ansh135/SplitLedger.git
    cd SplitLedger
-   
+   ```
 2. **Install Dependencies**:
+   ```bash
    npm install
+    ```
+4. **Configure Environment Variables**:
 
-3. **Configure Environment Variables**:
    Create a .env.local file in the root directory.
    Add the following variables:
+   ```bash
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+   CLERK_SECRET_KEY=your-clerk-secret-key
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_DATABASE_URL=your-neon-database-url
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
+   STRIPE_SECRET_KEY=your-stripe-secret-key
+   ```
+   Replace the placeholders (your-*) with the respective credentials obtained from Clerk, Neon, and Stripe.
+   
+4 **Configure Database**:
 
-  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
-  CLERK_SECRET_KEY=your-clerk-secret-key
-  NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-  NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-  NEXT_PUBLIC_DATABASE_URL=your-neon-database-url
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
-  STRIPE_SECRET_KEY=your-stripe-secret-key
-
-  Replace the placeholders (your-*) with the respective credentials obtained from Clerk, Neon, and Stripe.
- 4 **Configure Database**:
   Copy the NEXT_PUBLIC_DATABASE_URL string and replace it in:
   drizzle.config.js (root directory)
-dbConfig.jsx (in the utils folder)
-Run the following command to push the database schema:
-npm run db:push
-Once the database is connected, revert the changes made in drizzle.config.js and dbConfig.jsx to use NEXT_PUBLIC_DATABASE_URL.
+  dbConfig.jsx (in the utils folder)
+  Run the following command to push the database schema:
+```bash
+   npm run db:push
+```
+   Once the database is connected, revert the changes made in drizzle.config.js and dbConfig.jsx to use NEXT_PUBLIC_DATABASE_URL.
 
 5. **Start the Development Server**:
+   ```bash
      npm run dev
+   ```
 Open http://localhost:3000 in your browser.
 
-**First-Time User Setup**
+## First-Time User Setup
+
 New users must create an account on the website during their first run.
 The .env.local file is unique for each user. Do not share it with others.
 After initial setup, subsequent runs require only:
+```bash
 npm run dev
+```
+## Project Structure
+```plaintext
 
-**Project Structure*
 SplitLedger/
 ├── app/                # Main application components and pages
 ├── components/         # Reusable UI components
